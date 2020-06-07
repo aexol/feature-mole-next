@@ -5,11 +5,23 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "restart-database": "npm run rmdatabase && npm run database",
+    "database": "docker run  -d --name mongo -p 27017:27017 mongo",
+    "rmdatabase": "docker stop mongo && docker rm mongo"
   },
   "dependencies": {
+    "mongodb": "^3.5.8",
     "next": "9.4.4",
+    "next-auth": "^2.0.0-beta.62",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "tailwindcss": "^1.4.6"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.11",
+    "@types/react": "^16.9.35",
+    "postcss-preset-env": "^6.7.0",
+    "typescript": "^3.9.5"
   }
 }
